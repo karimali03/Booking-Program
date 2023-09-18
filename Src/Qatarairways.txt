@@ -1,0 +1,3 @@
+Cairo,Doha,First Class,20-6-2024,200
+Doha,Cairo,First Class,30-6-2024,220
+Cairo,London,First Class,30-6-2025,1000
