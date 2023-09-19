@@ -29,11 +29,3 @@ To use the Book Program, follow these steps:
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
 3. Open your terminal and run the program by executing `./book_program` (or the appropriate command).
-
-## Installation
-
-To install the Book Program, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Compile the program using the appropriate compiler and build instructions (e.g., `make`).
