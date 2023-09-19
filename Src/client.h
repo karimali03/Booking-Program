@@ -23,11 +23,7 @@ public:
         for(auto &x : cards) delete x.second;
         cards.clear();
     }
-
-
-
-
-
+    
      void add_card(){
         vector<string>v{"DebitCard","Credit Card"};
         int ch=ShowReadMenu(v,"Card Types");  
@@ -40,12 +36,15 @@ public:
        if(ch==1)     cards[s]=new DebitCard(s);
        else cards[s]=new CreditCard(s);
      }
+
      void create_reservation(string s){
         reservations.push_back(s);
      }
+
      void print_reservations(){
         for(auto x : reservations) cout<<x<<"\n";
      }
+     
      vector<string> cards_info(){
         vector<string>v;
         for(auto x : cards) v.push_back(x.second->ToString());

@@ -16,11 +16,11 @@ protected:
     int type;
 
 public:
-     user(){};
+    user(){};
     virtual ~user(){};
    
     vector<string> Profile() const {
-        vector<string>v{user_name,name};
+        vector<string>v{"User Name: ",user_name,"Name : ",name,"Acsess"};
         if(type) v.push_back("Admin");
         else v.push_back("User");
 		return v;

@@ -50,16 +50,16 @@ public:
         string s; 
          string nu;
         while(1){
-            cout<<"enter user name: "; cin>>s;
+            cout<<"enter user name (space not allowed): "; cin>>s;
             if(!users.count(s)) break;
             cout<<"User name is already taken\n\n";
         }
         nu+=s,nu+=",";
         new_user->setUserName(s);
-        cout<<"Enter password: ";  cin>>s;
+        cout<<"Enter password (space not allowed): ";  cin>>s;
          nu+=s,nu+=",";
         new_user->setPassword(s);
-        cout<<"Enter your name: "; cin>>s;
+        cout<<"Enter your name: "; getline(cin,s);getline(cin,s);
           nu+=s,nu+=",";
         new_user->setName(s);
           nu+='0';

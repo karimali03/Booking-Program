@@ -1,2 +1,3 @@
-Cairo,Aswan,Second class,20-6-2024,450
-Cairo,London,First Class,30-6-2025,1000
+Cairo,Doha,First Class,20-6-2024,100
+Doha,Cairo,First Class,30-6-2024,150
+Cairo,London,First Class,30-6-2025,1500

@@ -15,6 +15,7 @@ private:
 	Flight_manager* fmn;
 public:
     Booking_program(){
+        load_data();
         users=new users_manager();
 		hmn=new Hotel_manager();
 		fmn=new Flight_manager();

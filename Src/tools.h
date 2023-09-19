@@ -13,17 +13,19 @@ using namespace std;
 #ifndef TOOLS_H
 #define TOOLS_H
 
-vector<string>flights_companies{"Qatarairways.txt"};
-vector<string>Hotels_names{"Hilnan.txt"};
+vector<string>flights_companies;
+vector<string>Hotels_names;
+
 pair<int,pair<int,int>>getDate(){
   time_t t = std::time(nullptr);
   tm *const pTInfo = std::localtime(&t);
   return {pTInfo->tm_mday ,{pTInfo->tm_mon+1,pTInfo->tm_year+1900}};
 }
 
-string ReadDate(){
+string ReadDate(string header=""){
 	while(1){
 		int d,m,y;
+		if(header.size()) cout<<header<<"\n";
 		cout<<"Please enter day && month && year (ex:25 3 2022): ";
 		cin>>d>>m>>y;
 		if(d<1 || d>31 || m<1 || m>12 || y<1){
@@ -33,6 +35,7 @@ string ReadDate(){
 		pair<int,pair<int,int>> date=getDate();
 		if(y<date.second.second || y==date.second.second && m<date.second.first
 		|| y==date.second.second && m==date.second.first && d<date.first ){
+			cout<<date.first<<" "<<date.second.first<<" "<<date.second.second<<"\n";
 			cout<<"Invalid Date try again\n\n";
 			continue;
 		}
@@ -132,5 +135,15 @@ vector<string> SplitString(const string &str, const string &delimiter = ",") {
 	return strs;
 }
 
+
+void load_data(){
+	vector<string>paths=ReadFileLines("Hotels.txt");
+	// Hotels
+	for(auto & x : paths)   Hotels_names.push_back(x);
+	// airways companies
+	paths=ReadFileLines("airways.txt");
+	for(auto & x : paths)  	flights_companies.push_back(x);
+		
+}
 
 #endif 

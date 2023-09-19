@@ -17,11 +17,10 @@ public:
          SetCardNumber(card_num);
         string s;
         int num;
-        cout<<"Enter name on card: "; cin>>s;
+        cout<<"Enter name on card: "; getline(cin,s);getline(cin,s);
         SetOwnerName(s);
-        cout<<"Enter expiry_date [dd,mm,yy]: "; cin>>s;
-        SetExpiryDate(s);
-        cout<<"Enter Security Code: "; cin>>num;
+        SetExpiryDate(ReadDate("Enter Expiry Date"));
+        cout<<"Enter Security Code (CVV): "; cin>>num;
         SetSecurityCode(num);
     }
 	const string& GetCardNumber() const {

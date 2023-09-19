@@ -34,8 +34,8 @@ public:
         int ch=ShowReadMenu(s,"Menu");
         if(ch==1){
           vector<string>v=user->Profile();
-          cout<<"User Name: "<<v[0]<<"\n";
-          cout<<"Name: "<<v[1]<<"\n\n";
+          cout<<v[0]<<v[1]<<"\n";
+          cout<<v[2]<<v[3]<<"\n\n";
         }
         else if(ch==2) {
             if(user->getCards().empty()){
@@ -62,13 +62,9 @@ public:
         else if(ch==2) reservation->AddReservation(Hotel_menu(hmn));
         else if(ch==3){
             user->create_reservation(reservation->ToString());
-            delete reservation;
-            reservation=nullptr;
             break;
         }
         else {
-            delete reservation;
-            reservation=nullptr;
             break;
         }
         }
@@ -77,8 +73,8 @@ public:
         while(1){
         string date=ReadDate();
         string from,to;
-        cout<<"Enter City from: "; cin>>from;
-        cout<<"Enter City to: "; cin>>to;
+        cout<<"Enter City from: "; getline(cin,from);getline(cin,from);
+        cout<<"Enter City to: "; getline(cin,to);
         vector<string> v=fmn->list_trips(from,to,date);
         if(v.empty()){
             cout<<"This Trip is not avilable\n\n";
@@ -93,7 +89,7 @@ public:
      while(1){
         string date=ReadDate();
         string city;
-        cout<<"Enter City: "; cin>>city;
+        cout<<"Enter City: "; getline(cin,city);getline(cin,city);
         vector<string> v=hmn->list_trips(city,date);
         if(v.empty()){
             cout<<"This Trip is not avilable\n\n";

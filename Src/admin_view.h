@@ -42,10 +42,12 @@ public:
         cout<<path<<"\n";
         if(ch==1){
             flights_companies.push_back(path);
+            WriteFileLines("airways.txt",vector<string>{path});
             fmn->load_data();
         }
         else {
             Hotels_names.push_back(path);
+             WriteFileLines("Hotels.txt",vector<string>{path});
              hmn->load_data();
         }
     }
